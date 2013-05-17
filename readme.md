@@ -1,6 +1,4 @@
-
 #Snowflake.Net
-==============
 
 A port of  Twitter's [Snowflake](https://github.com/twitter/snowflake)  algorithm to C#.
 
