@@ -114,7 +114,7 @@ namespace Snowflake
         // 获取当前的时间戳
         protected virtual long TimeGen()
         {
-            return System.CurrentTimeMillis();
+            return TimeExtensions.CurrentTimeMillis();
         }
     }
 }

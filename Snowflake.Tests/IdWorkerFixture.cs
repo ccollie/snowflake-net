@@ -52,7 +52,9 @@ namespace Snowflake.Tests
             }
         }
  
-
+        /// <summary>
+        /// 如何获取ID，ID>0
+        /// </summary>
         [Test]
         public void It_should_generate_an_id()
         {
@@ -67,6 +69,9 @@ namespace Snowflake.Tests
 
         }
 
+        /// <summary>
+        /// 判断WorkerId是否是自己设置的1
+        /// </summary>
         [Test]
         public void It_should_return_the_correct_job_id()
         {
@@ -74,7 +79,9 @@ namespace Snowflake.Tests
             Assert.That(s.WorkerId, Is.EqualTo(1));
         }
 
-
+        /// <summary>
+        /// 判断DatacenterId是否是自己设置的1
+        /// </summary>
         [Test]
         public void It_should_return_the_datacenter_id()
         {
@@ -82,6 +89,9 @@ namespace Snowflake.Tests
             Assert.That(s.DatacenterId, Is.EqualTo(1));
         }
 
+        /// <summary>
+        /// 判断是否是正确的workerId
+        /// </summary>
         [Test]
         public void It_should_properly_mask_worker_id()
         {
@@ -96,6 +106,9 @@ namespace Snowflake.Tests
             }
         }
 
+        /// <summary>
+        /// 判断是否是正确的datacenterId
+        /// </summary>
         [Test]
         public void It_should_properly_mask_the_datacenter_id()
         {
@@ -110,14 +123,17 @@ namespace Snowflake.Tests
             }
         }
 
+        /// <summary>
+        /// 判断是否是正确的时间轴
+        /// </summary>
         [Test]
         public void It_should_properly_mask_timestamp()
         {
             var worker = new IdWorker(31, 31);
             for (var i = 0; i < 100; i++)
             {
-                var t = System.CurrentTimeMillis();
-                using (System.StubCurrentTime(t))
+                var t = TimeExtensions.CurrentTimeMillis();
+                using (TimeExtensions.StubCurrentTime(t))
                 {
                     var id = worker.NextId();
                     var actual = (((ulong)id & TimestampMask) >> 22);
@@ -127,6 +143,9 @@ namespace Snowflake.Tests
             }
         }
 
+        /// <summary>
+        /// 检测溢出
+        /// </summary>
         [Test]
         public void It_should_roll_over_sequence_id()
         {
@@ -146,6 +165,9 @@ namespace Snowflake.Tests
             } 
         }
 
+        /// <summary>
+        /// 检测ID是不是递增的
+        /// </summary>
         [Test]
         public void It_should_generate_increasing_ids()
         {
@@ -159,19 +181,25 @@ namespace Snowflake.Tests
             }
         }
 
+        /// <summary>
+        /// 快速生成1000000个ID看看耗时多少
+        /// </summary>
         [Test]
         public void It_should_generate_1_million_ids_quickly()
         {
             var worker = new IdWorker(31, 31);
-            var t = System.CurrentTimeMillis();
+            var t = TimeExtensions.CurrentTimeMillis();
             for (int i = 0; i < 1000000; i++)
             {
                 var id = worker.NextId();
             }
-            var t2 = System.CurrentTimeMillis();
+            var t2 = TimeExtensions.CurrentTimeMillis();
             Console.WriteLine("generated 1000000 ids in {0} ms, or {1} ids/second", t2 - t, 1000000000.0/(t2-t));
         }
 
+        /// <summary>
+        /// 同一毫秒翻转两次的测试
+        /// </summary>
         [Test]
         public void It_should_sleep_if_we_rollover_twice_in_the_same_millisecond()
         {
@@ -188,7 +216,7 @@ namespace Snowflake.Tests
                     return res;
                 };
 
-            using (System.StubCurrentTime(timeFunc))
+            using (TimeExtensions.StubCurrentTime(timeFunc))
             {
                 worker.Sequence = 4095;
                 worker.NextId();
@@ -198,6 +226,9 @@ namespace Snowflake.Tests
             Assert.That(worker.Slept, Is.EqualTo(1));
         }
 
+        /// <summary>
+        /// 生成唯一ID测试
+        /// </summary>
         [Test]
         public void It_should_generate_only_unique_ids()
         {
@@ -219,6 +250,9 @@ namespace Snowflake.Tests
             Assert.That(set.Count, Is.EqualTo(N));
         }
 
+        /// <summary>
+        /// 生成的ID应该超过500亿
+        /// </summary>
         [Test]
         public void It_should_generate_ids_over_50_billion()
         {
@@ -227,6 +261,9 @@ namespace Snowflake.Tests
             Assert.That(id, Is.GreaterThan(50000000000L));
         }
 
+        /// <summary>
+        /// 唯一ID测试
+        /// </summary>
         [Test]
         public void It_should_generate_only_unique_ids_even_when_time_goes_backward()
         {
@@ -253,7 +290,7 @@ namespace Snowflake.Tests
 
             worker.Time = 0;
             Assert.That(worker.Sequence, Is.EqualTo(1));
-            Assert.Throws<InvalidSystemClock>(() => worker.NextId());
+            Assert.Throws<Exception>(() => worker.NextId());
             Assert.That(worker.Sequence, Is.EqualTo(1));  // this used to get reset to 0, which would cause conflicts
 
             worker.Time = 1;

@@ -2,7 +2,7 @@
 
 namespace Snowflake
 {
-    public static class System
+    public static class TimeExtensions
     {
         public static Func<long> currentTimeFunc = InternalCurrentTimeMillis;
  
