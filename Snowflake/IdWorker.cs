@@ -1,12 +1,10 @@
 ﻿/** Copyright 2010-2012 Twitter, Inc.*/
-
 /**
  * An object that generates IDs.
  * This is broken into a separate class in case
  * we ever want to support multiple worker threads
  * per process
  */
-
 using System;
 
 namespace Snowflake
@@ -33,7 +31,6 @@ namespace Snowflake
         private const int DatacenterIdShift = SequenceBits + WorkerIdBits;
         //时间毫秒左移22位
         public const int TimestampLeftShift = SequenceBits + WorkerIdBits + DatacenterIdBits;
-
 
         private long _sequence = 0L;
         private long _lastTimestamp = -1L;
