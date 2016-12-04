@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snowflake", "Snowflake\Snowflake.csproj", "{A964980D-9DF4-44F2-914E-FDEB000552D6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snowflake.Tests", "Snowflake.Tests\Snowflake.Tests.csproj", "{FAEE4150-2873-49BC-BE3C-B514FF416064}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snowflake.ZConsole", "Snowflake.Console\Snowflake.ZConsole.csproj", "{477B1CFF-55C1-46F7-A5A3-D1652C0DD5E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +23,10 @@ Global
 		{FAEE4150-2873-49BC-BE3C-B514FF416064}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAEE4150-2873-49BC-BE3C-B514FF416064}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAEE4150-2873-49BC-BE3C-B514FF416064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{477B1CFF-55C1-46F7-A5A3-D1652C0DD5E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{477B1CFF-55C1-46F7-A5A3-D1652C0DD5E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{477B1CFF-55C1-46F7-A5A3-D1652C0DD5E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{477B1CFF-55C1-46F7-A5A3-D1652C0DD5E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
