@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Snowflake.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Snowflake.Net.4.0.0\lib\Snowflake.Net.dll</HintPath>
+      <HintPath>..\packages\Snowflake.Net.4.5.1\lib\Snowflake.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
