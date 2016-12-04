@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Snowflake.Net
+namespace Snowflake.Net.Core
 {
     public class DisposableAction : IDisposable
     {

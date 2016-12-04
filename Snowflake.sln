@@ -1,9 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snowflake", "Snowflake\Snowflake.csproj", "{A964980D-9DF4-44F2-914E-FDEB000552D6}"
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snowflake.Net", "Snowflake\Snowflake.Net.csproj", "{A964980D-9DF4-44F2-914E-FDEB000552D6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snowflake.Tests", "Snowflake.Tests\Snowflake.Tests.csproj", "{FAEE4150-2873-49BC-BE3C-B514FF416064}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snowflake.ZConsole", "Snowflake.Console\Snowflake.ZConsole.csproj", "{477B1CFF-55C1-46F7-A5A3-D1652C0DD5E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{370E2EA8-DAFA-47FF-87E7-B3AC6596ABB9}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Demo.Core", "Demo.Core\Demo.Core.xproj", "{E2E6440B-E15E-49EF-B116-8DD05292D77D}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Snowflake.Net.Core", "Snowflake.Net.Core\Snowflake.Net.Core.xproj", "{403B0A20-BDBA-404B-A406-2D26B13A105C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +29,22 @@ Global
 		{FAEE4150-2873-49BC-BE3C-B514FF416064}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAEE4150-2873-49BC-BE3C-B514FF416064}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAEE4150-2873-49BC-BE3C-B514FF416064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{477B1CFF-55C1-46F7-A5A3-D1652C0DD5E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{477B1CFF-55C1-46F7-A5A3-D1652C0DD5E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{477B1CFF-55C1-46F7-A5A3-D1652C0DD5E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{477B1CFF-55C1-46F7-A5A3-D1652C0DD5E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{370E2EA8-DAFA-47FF-87E7-B3AC6596ABB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{370E2EA8-DAFA-47FF-87E7-B3AC6596ABB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{370E2EA8-DAFA-47FF-87E7-B3AC6596ABB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{370E2EA8-DAFA-47FF-87E7-B3AC6596ABB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2E6440B-E15E-49EF-B116-8DD05292D77D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2E6440B-E15E-49EF-B116-8DD05292D77D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2E6440B-E15E-49EF-B116-8DD05292D77D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2E6440B-E15E-49EF-B116-8DD05292D77D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{403B0A20-BDBA-404B-A406-2D26B13A105C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{403B0A20-BDBA-404B-A406-2D26B13A105C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{403B0A20-BDBA-404B-A406-2D26B13A105C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{403B0A20-BDBA-404B-A406-2D26B13A105C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
