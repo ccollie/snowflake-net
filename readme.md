@@ -1,8 +1,8 @@
-#Snowflake.Net
+# Snowflake.Net
 
 A port of  Twitter's [Snowflake](https://github.com/twitter/snowflake)  algorithm to C#.
 
 Snowflake is a service for generating unique ID numbers at high scale.
 
-###License
+### License
 Apache 2.0
